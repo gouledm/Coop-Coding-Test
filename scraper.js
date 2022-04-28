@@ -1,7 +1,8 @@
 const { link } = require('fs');
 const puppeteer = require('puppeteer');
 async function start(){
-    const browser = await puppeteer.launch();
+    //slowMo is too slow
+    const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
     // opens condoworks site
     await page.goto("https://app-dev.condoworks.co");
